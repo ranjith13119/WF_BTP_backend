@@ -33,8 +33,8 @@ sap.ui.define(
           s.setAttribute("src", "https://cdn.cai.tools.sap/webclient/bootstrap.js");
           document.body.appendChild(s);
         }
-        s.setAttribute("channelId", "d3551023-d8c0-4ad5-92b3-a093a5519211");
-        s.setAttribute("token", "589fe19a54c51c44b3ba8eb1bae970a7");
+        s.setAttribute("channelId", "xxx");
+        s.setAttribute("token", "xxx");
       },
     });
   }
