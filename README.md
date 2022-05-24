@@ -1,25 +1,20 @@
-# Getting Started
+This is a sample application to demonstrate the implementation of an end-to-end process of e-commerce solution, from customer ordering to the delivery confirmation. Such process is handled by the Workflow Management Service.
 
-Welcome to your new project.
+![image](https://user-images.githubusercontent.com/30929584/170019281-07896018-e93d-4188-b1f7-948c4fe91671.png)
 
-It contains these folders and files, following our recommended project layout:
+The process starts with the "customer person" that places an order using a Chatbot created with [SAP Conversational AI](https://cai.tools.sap/ranjith13119/smb-shopping-assistant/train).
 
-File or Folder | Purpose
----------|----------
-`app/` | content for UI frontends goes here
-`db/` | your domain models and data go here
-`srv/` | your service models and code go here
-`package.json` | project metadata and configuration
-`readme.md` | this getting started guide
+"Shopping Cart employees" (i.e. Agent,courier, Rider) interact with the workflow tasks via a custom application (this repository) that consume the [Workflow APIs](https://help.sap.com/docs/r/e157c391253b4ecd93647bf232d18a83/Cloud/en-US/df943e71122448caaf3c49f5ffd80627.html).
 
+All the workflow releated codes are available in [https://github.com/ranjith13119/WF_BTP_backend.git](https://github.com/ranjith13119/Workflow_BTP.git)
 
-## Next Steps
+![image](https://user-images.githubusercontent.com/30929584/170020692-8ea11563-a8d4-432e-a604-28744f7f6fac.png)
 
-- Open a new terminal and run `cds watch` 
-- (in VS Code simply choose _**Terminal** > Run Task > cds watch_)
-- Start adding content, for example, a [db/schema.cds](db/schema.cds).
+![image](https://user-images.githubusercontent.com/30929584/170020782-05c69ad0-d8d5-4a6c-ac88-aeffb6c14bfa.png)
+
+![image](https://user-images.githubusercontent.com/30929584/170020886-ce81f905-f254-4e34-b073-a5ed0a47fb2e.png)
+
+![image](https://user-images.githubusercontent.com/30929584/170021045-37fc8642-c544-4645-9aba-a6dc572ca610.png)
 
 
-## Learn More
 
-Learn more at https://cap.cloud.sap/docs/get-started/.
