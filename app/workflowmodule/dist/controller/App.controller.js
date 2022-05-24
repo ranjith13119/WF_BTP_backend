@@ -1,0 +1,1 @@
+sap.ui.define(["sap/ui/core/mvc/Controller"],function(o){"use strict";return o.extend("workflowmodule.workflowmodule.controller.App",{onInit:function(){}})});

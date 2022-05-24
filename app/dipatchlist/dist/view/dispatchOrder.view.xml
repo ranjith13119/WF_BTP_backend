@@ -1,0 +1,54 @@
+<mvc:View controllerName="dipatchlist.dipatchlist.controller.dispatchOrder"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="dispatchOrder" title="Orders List for Dispatch" >
+        <content> 
+        
+        <Table id="idProductsTable" inset="false" items="{ path: 'OrdersModel>/Orders' }"  busy = "{OrdersModel>/busy}"> 
+		<columns>
+			<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				hAlign="Center">
+				<Text text="{i18n>col1}" />
+			</Column>
+			<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				hAlign="Center">
+				<Text text="{i18n>col2}" />
+			</Column>
+            <Column
+				hAlign="Center">
+				<Text text="{i18n>col3}" />
+			</Column>
+            <Column
+				hAlign="Center">
+				<Text text="{i18n>col4}" />
+			</Column>
+			<Column
+				hAlign="Center">
+				<Text text="{i18n>col5}" />
+			</Column>
+            <Column
+				hAlign="Center">
+				<Text text="{i18n>col6}" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem vAlign="Middle">
+				<cells>
+					<Text text="{OrdersModel>id}" />
+					<Text text="{OrdersModel>ProductName}" />
+                    <Text text="{OrdersModel>createdAt}" />
+					<Text text="{OrdersModel>Quantity}" />
+                    <Text text="{OrdersModel>Price}" />
+                    <Button text = "{i18n>btnApproval}" visible = "{= ${OrdersModel>ProductName} ? true : false}" press = ".onDispatchpress"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+        
+        </content>
+    </Page>
+</mvc:View> 

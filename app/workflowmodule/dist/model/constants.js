@@ -1,0 +1,1 @@
+sap.ui.define([],function(){"use strict";var i={USER_INFO:"Pick-up"};return i});

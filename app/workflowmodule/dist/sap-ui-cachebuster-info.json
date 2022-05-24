@@ -1,0 +1,22 @@
+{
+  "Component-preload.js": 1653383601080,
+  "utils/locate-reuse-libs.js": 1653046530309,
+  "manifest.json": 1653383600553,
+  "model/models.js": 1653375751103,
+  "model/constants.js": 1653292250426,
+  "controller/Orders.controller.js": 1653376522455,
+  "controller/App.controller.js": 1653046530309,
+  "Component.js": 1653375860783,
+  "manifest-bundle.zip": 1653383600595,
+  "i18n/i18n.properties": 1653377216519,
+  "utils/locate-reuse-libs-dbg.js": 1653046530309,
+  "model/models-dbg.js": 1653375751103,
+  "model/constants-dbg.js": 1653292250426,
+  "controller/Orders-dbg.controller.js": 1653376522455,
+  "controller/App-dbg.controller.js": 1653046530309,
+  "Component-dbg.js": 1653375860783,
+  "view/Orders.view.xml": 1653383186759,
+  "view/App.view.xml": 1653057357966,
+  "css/style.css": 1653046530309,
+  "index.html": 1653046530309
+}

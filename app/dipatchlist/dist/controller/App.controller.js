@@ -1,0 +1,1 @@
+sap.ui.define(["sap/ui/core/mvc/Controller"],function(t){"use strict";return t.extend("dipatchlist.dipatchlist.controller.App",{onInit:function(){}})});

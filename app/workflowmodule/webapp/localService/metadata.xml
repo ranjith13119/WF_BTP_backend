@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Capabilities.V1.xml">
+        <edmx:Include Alias="Capabilities" Namespace="Org.OData.Capabilities.V1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="CatalogService" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="Products" EntityType="CatalogService.Products"/>
+                <EntitySet Name="Invoice" EntityType="CatalogService.Invoice"/>
+                <ActionImport Name="submitOrder" Action="CatalogService.submitOrder"/>
+                <FunctionImport Name="getTaskDetails" Function="CatalogService.getTaskDetails"/>
+            </EntityContainer>
+            <EntityType Name="Products">
+                <Key>
+                    <PropertyRef Name="ProductID"/>
+                </Key>
+                <Property Name="ProductID" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="ProductName" Type="Edm.String"/>
+                <Property Name="Description" Type="Edm.String"/>
+                <Property Name="Price" Type="Edm.Decimal" Scale="variable"/>
+                <Property Name="ImageURL" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="Invoice">
+                <Key>
+                    <PropertyRef Name="ProductID"/>
+                    <PropertyRef Name="InvoiceID"/>
+                </Key>
+                <Property Name="ProductID" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="ProductName" Type="Edm.String"/>
+                <Property Name="Description" Type="Edm.String"/>
+                <Property Name="Price" Type="Edm.Decimal" Scale="variable"/>
+                <Property Name="ImageURL" Type="Edm.String"/>
+                <Property Name="InvoiceID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="CustomerName" Type="Edm.String"/>
+                <Property Name="CustomerEmail" Type="Edm.String"/>
+                <Property Name="Address" Type="Edm.String"/>
+                <Property Name="Quantity" Type="Edm.Int32"/>
+                <Property Name="purchaseDate" Type="Edm.Date"/>
+            </EntityType>
+            <ComplexType Name="orderData">
+                <Property Name="CustomerName" Type="Edm.String"/>
+                <Property Name="CustomerEmail" Type="Edm.String"/>
+                <Property Name="Address" Type="Edm.String"/>
+                <Property Name="ProductID" Type="Edm.String"/>
+                <Property Name="ProductName" Type="Edm.String"/>
+                <Property Name="Quantity" Type="Edm.Int32"/>
+            </ComplexType>
+            <ComplexType Name="WFContext">
+                <Property Name="ProductID" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="ProductName" Type="Edm.String"/>
+                <Property Name="Description" Type="Edm.String"/>
+                <Property Name="Price" Type="Edm.Decimal" Scale="variable"/>
+                <Property Name="ImageURL" Type="Edm.String"/>
+                <Property Name="InvoiceID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="CustomerName" Type="Edm.String"/>
+                <Property Name="CustomerEmail" Type="Edm.String"/>
+                <Property Name="Address" Type="Edm.String"/>
+                <Property Name="Quantity" Type="Edm.Int32"/>
+                <Property Name="purchaseDate" Type="Edm.Date"/>
+                <Property Name="orderData" Type="Edm.String"/>
+            </ComplexType>
+            <ComplexType Name="return_CatalogService_submitOrder">
+                <Property Name="Id" Type="Edm.String"/>
+                <Property Name="message" Type="Edm.String"/>
+            </ComplexType>
+            <ComplexType Name="return_CatalogService_getTaskDetails">
+                <Property Name="activityId" Type="Edm.String"/>
+                <Property Name="createdAt" Type="Edm.DateTimeOffset"/>
+                <Property Name="description" Type="Edm.String"/>
+                <Property Name="id" Type="Edm.Guid"/>
+                <Property Name="status" Type="Edm.String"/>
+                <Property Name="subject" Type="Edm.String"/>
+                <Property Name="workflowDefinitionId" Type="Edm.String"/>
+                <Property Name="workflowInstanceId" Type="Edm.Guid"/>
+                <Property Name="priority" Type="Edm.String"/>
+                <Property Name="createdBy" Type="Edm.String"/>
+                <Property Name="definitionId" Type="Edm.String"/>
+                <Property Name="lastChangedAt" Type="Edm.DateTimeOffset"/>
+                <Property Name="applicationScope" Type="Edm.String"/>
+                <Property Name="context" Type="CatalogService.WFContext"/>
+            </ComplexType>
+            <Action Name="submitOrder" IsBound="false">
+                <Parameter Name="recipient" Type="Edm.String"/>
+                <Parameter Name="orderData" Type="CatalogService.orderData"/>
+                <ReturnType Type="CatalogService.return_CatalogService_submitOrder"/>
+            </Action>
+            <Function Name="getTaskDetails" IsBound="false" IsComposable="false">
+                <Parameter Name="user" Type="Edm.String"/>
+                <ReturnType Type="Collection(CatalogService.return_CatalogService_getTaskDetails)" Nullable="false"/>
+            </Function>
+            <Annotations Target="CatalogService.EntityContainer/Products">
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record Type="Capabilities.DeleteRestrictionsType">
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.InsertRestrictions">
+                    <Record Type="Capabilities.InsertRestrictionsType">
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record Type="Capabilities.UpdateRestrictionsType">
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="CatalogService.EntityContainer/Invoice">
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record Type="Capabilities.DeleteRestrictionsType">
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.InsertRestrictions">
+                    <Record Type="Capabilities.InsertRestrictionsType">
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record Type="Capabilities.UpdateRestrictionsType">
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="CatalogService.Invoice/purchaseDate">
+                <Annotation Term="Core.ComputedDefaultValue" Bool="true"/>
+            </Annotations>
+            <Annotations Target="CatalogService.WFContext/purchaseDate">
+                <Annotation Term="Core.ComputedDefaultValue" Bool="true"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
