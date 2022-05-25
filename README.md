@@ -16,5 +16,10 @@ All the workflow releated codes are available in [https://github.com/ranjith1311
 
 ![image](https://user-images.githubusercontent.com/30929584/170021045-37fc8642-c544-4645-9aba-a6dc572ca610.png)
 
+**Process Visibility**
+
+![image](https://user-images.githubusercontent.com/30929584/170265448-b7dd02af-c4b1-43b4-8de2-dd845ef89eac.png)
+
+
 
 
