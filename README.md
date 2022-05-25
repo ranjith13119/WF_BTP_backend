@@ -20,6 +20,15 @@ All the workflow releated codes are available in [https://github.com/ranjith1311
 
 ![image](https://user-images.githubusercontent.com/30929584/170265448-b7dd02af-c4b1-43b4-8de2-dd845ef89eac.png)
 
+**Event Acquisition of the application**
+
+![image](https://user-images.githubusercontent.com/30929584/170265639-95d6cd6c-4cfc-4310-af5d-609f39b8dcbe.png)
+
+**Monitor Visibility Scenarios**
+
+![image](https://user-images.githubusercontent.com/30929584/170265775-5c6c6038-4d75-4b77-a75e-15d7a9ddf52e.png)
+
+
 
 
 
